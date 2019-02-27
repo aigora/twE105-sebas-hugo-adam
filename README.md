@@ -1,6 +1,6 @@
-# Resolución de problemas (Electroestática)
+# Resolución de problemas (Electrostática)
 
-- Programa para resolver ejercicios de fuerza electroestática,
+- Programa para resolver ejercicios de fuerza electrostática,
 energía potencial, ley de Gauss...
 
 ## Integrantes del equipo
