@@ -1,10 +1,13 @@
-# Título del trabajo
+# Resolución de problemas (Electroestática)
 
-Descripción breve del proyecto a realizar (2-3 frases).
+- Programa para resolver ejercicios de fuerza electroestática,
+energía potencial, ley de Gauss...
 
 ## Integrantes del equipo
 
-Nombres, apellidos, y usuario GitHub de los integrantes del equipo.
+- Hugo Franco Sanz, @hfranco47
+- Sebastián Fonseca Pradera, @sfonseca2019
+- Adam El Ouadrari, @adamelouadrari
 
 ## Objetivos del trabajo
 
