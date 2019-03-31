@@ -11,4 +11,4 @@ energía potencial, ley de Gauss...
 
 ## Objetivos del trabajo
 
-Lista de los objetivos que se persiguen con el trabajo propuesto.
+- Utlizar la programación para la resolución de problemas.
