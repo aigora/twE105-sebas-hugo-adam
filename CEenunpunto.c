@@ -1,4 +1,4 @@
-//CAMPO ELÉCTRICO PRODUCIDO POR DOS CARGAS EN UN PUNTO
+//CAMPO ELÃ‰CTRICO PRODUCIDO POR DOS CARGAS EN UN PUNTO
 #include <stdio.h>
 #include <math.h>
 
@@ -22,7 +22,7 @@ void main ()
 	printf ("Esribe donde estan situadas las cargas q1 y q2, y el punto donde actua el campo:\n");
 	scanf ("%f %f %f %f %f %f", &q1.x, &q1.y, &q2.x, &q2.y, &p.x, &p.y);
 	
-	//Campo eléctrico producido por la carga 1:
+	//Campo elÃ©ctrico producido por la carga 1:
 	printf ("\nCAMPO ELECTRICO QUE PRODUCE LA PRIMERA CARGA\n");
 	dist1 = distancia1(q1,p);
 	printf ("Las componentes i y j del vector son, respectivamente: \n");
@@ -33,7 +33,7 @@ void main ()
 	printf ("El modulo del campo electrico es:\n");
 	campo1(q1,p,Q1);
 	
-	//Campo eléctrico producido por la carga 2:
+	//Campo elÃ©ctrico producido por la carga 2:
 	printf ("\n\nCAMPO ELECTRICO QUE PRODUCE LA SEGUNDA CARGA\n");
 	dist2 = distancia2(q2,p);
 	printf ("Las componentes i y j del vector son, respectivamente: \n");
@@ -115,7 +115,7 @@ float CAMPO (punto q1, punto q2, punto p, float Q1, float Q2)
 	E12 = (((k*Q1)/(pow(sqrt((p.x-q1.x)*(p.x-q1.x)+(p.y-q1.y)*(p.y-q1.y)),2)))*u12)/(sqrt((p.x-q1.x)*(p.x-q1.x)+(p.y-q1.y)*(p.y-q1.y)));
 	E22 = (((k*Q2)/(pow(sqrt((p.x-q2.x)*(p.x-q2.x)+(p.y-q2.y)*(p.y-q2.y)),2)))*u22)/(sqrt((p.x-q2.x)*(p.x-q2.x)+(p.y-q2.y)*(p.y-q2.y)));
 	E1 = E11+E21;
-	printf ("La componente i del campo total es: %2.f\n", E1);
+	printf ("La componente i del campo total es: %.2f\n", E1);
 	E2 = E12+E22;
 	printf ("La componente j del campo total es: %.2f\n", E2);
 	printf ("\nEl CAMPO ELECTRICO TOTAL producido por las dos cargas es:\n");
