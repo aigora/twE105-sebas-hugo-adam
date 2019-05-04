@@ -9,7 +9,8 @@ float distancia1 (punto q1, punto p);
 float distancia2 (punto q2, punto p); 
 float Poten1 (punto q1, punto p, float Q1); 
 float Poten2 (punto q2, punto p, float Q2); 
-float POTEN (punto q1, punto q2, punto p, float Q1, float Q2);
+float POTENTOTAL (punto q1, punto q2, punto p, float Q1, float Q2);
+float POTENDIF (punto q1, punto q2, punto p, float Q1, float Q2);
  
 void main () 
 { 
@@ -41,7 +42,11 @@ void main ()
 	
 	//Potencial en el punto
 	printf("\nEl valor total del potencial en el punto es de:\n");
-	POTEN(q1,q2,p,Q1,Q2);
+	POTENTOTAL(q1,q2,p,Q1,Q2);
+	
+	//Diferencia de potencial
+	printf("\nLa diferencia de potencia es de:\n");
+	POTENDIF(q1,q2,p,Q1,Q2);
 }
 
 float distancia1 (punto q1, punto p) 
@@ -72,7 +77,7 @@ float Poten2 (punto q2, punto p, float Q2)
 	printf ("%.2f", V2);
 }
 
-float POTEN (punto q1, punto q2, punto p, float Q1, float Q2)
+float POTENTOTAL (punto q1, punto q2, punto p, float Q1, float Q2)
 {
 	float r1, r2, V1, V2, V, k=9E9;
 	r1 = sqrt((p.x-q1.x)*(p.x-q1.x)+(p.y-q1.y)*(p.y-q1.y));
@@ -81,4 +86,15 @@ float POTEN (punto q1, punto q2, punto p, float Q1, float Q2)
 	V2 = (k*Q2)/(sqrt((p.x-q2.x)*(p.x-q2.x)+(p.y-q2.y)*(p.y-q2.y)));
 	V= V1+ V2;
 	printf("%.2f", V);
+}
+
+float POTENDIF (punto q1, punto q2, punto p, float Q1, float Q2)
+{
+	float r1, r2, V1, V2, Vd, k=9E9;
+	r1 = sqrt((p.x-q1.x)*(p.x-q1.x)+(p.y-q1.y)*(p.y-q1.y));
+	r2 = sqrt((p.x-q2.x)*(p.x-q2.x)+(p.y-q2.y)*(p.y-q2.y));
+	V1 = (k*Q1)/(sqrt((p.x-q1.x)*(p.x-q1.x)+(p.y-q1.y)*(p.y-q1.y)));
+	V2 = (k*Q2)/(sqrt((p.x-q2.x)*(p.x-q2.x)+(p.y-q2.y)*(p.y-q2.y)));
+	Vd= V2-V1;
+	printf("%.2f", Vd);
 }
