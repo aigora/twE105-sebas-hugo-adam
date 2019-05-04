@@ -45,6 +45,9 @@ void main ()
 	scanf ("%f %f", &Q2 ,&Q3);
 	printf ("El modulo de la fuerza es:\n");
 	Fuer2(q2,p,Q2,Q3);
+	
+	//Fuerza total en el punto:
+	
 	printf("\nEl modulo de la fuerza total es de:\n");
 	FUER(q1,q2,p,Q1,Q2,Q3);
 
