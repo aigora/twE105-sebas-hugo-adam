@@ -7,7 +7,6 @@ energía potencial, ley de Gauss...
 
 - Hugo Franco Sanz, @hfranco47
 - Sebastián Fonseca Pradera, @sfonseca2019
-- Adam El Ouadrari, @adamelouadrari
 
 ## Objetivos del trabajo
 
