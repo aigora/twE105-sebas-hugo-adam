@@ -1,4 +1,4 @@
-//Almacenamiento ded energia potencial
+//Almacenamiento de energia potencial
 #include <stdio.h>
 #include <math.h> 
 
