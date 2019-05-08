@@ -1,4 +1,4 @@
-//ENERGÍA POTENCIAL ELECTROSTÁTICA
+//ENERGIA POTENCIAL ELECTROSTATICA
 #include <stdio.h>
 #include <math.h>
 
@@ -33,7 +33,7 @@ void main ()
 	
 	distancia(p,q,n);
 	
-	//Energía que poduce cada carga en el punto y energía total
+	//Energia que poduce cada carga en el punto y energia total
 	
 	for (i=0; i<n; i++)
 	{
