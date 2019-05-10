@@ -31,7 +31,7 @@ void main ()
 	scanf ("%f %f", &p.x, &p.y);
 	distancia(p,q,n);
 
-  	printf("introduce la capacidad del condensador:\n");
+  	printf("Introduce la capacidad del condensador:\n");
   	scanf("%f", &C);
   	
   //Energia que poduce cada carga en el punto y energia total
