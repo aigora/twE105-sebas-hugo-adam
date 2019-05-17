@@ -269,7 +269,7 @@ do{
 	                punto q[30];
 	                punto p;
 	                float Q[30], U[30];
-	                printf ("Inroduzca el numero de cargas:\n");
+	                printf ("Introduzca el numero de cargas:\n");
 	                scanf ("%i", &n);
 	                //Distancia entre el punto y las cargas
 	                i=0;
