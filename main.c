@@ -118,11 +118,11 @@ do{
 					
 				case 3:
 						system ("cls");
-					//CAMPO ELÉCTRICO PRODUCIDO POR DOS CARGAS EN UN PUNTO
+					//CAMPO ELÃ‰CTRICO PRODUCIDO POR DOS CARGAS EN UN PUNTO
 					printf ("CAMPO ELECTRICO PRODUCIDO POR DOS CARGAS EN UN PUNTO\n");
 	                printf ("Esribe donde estan situadas las cargas q1 y q2, y el punto donde actua el campo, respectivamente:\n");
 	                scanf ("%f %f %f %f %f %f", &q1.x, &q1.y, &q2.x, &q2.y, &p.x, &p.y);
-	                //Campo eléctrico producido por la carga 1:
+	                //Campo elÃ©ctrico producido por la carga 1:
 	                printf ("\nCAMPO ELECTRICO QUE PRODUCE LA PRIMERA CARGA\n");
 	                dist1 = distancia1(q1,p);
 	                printf ("Las componentes i y j del vector son, respectivamente: \n");
@@ -132,13 +132,13 @@ do{
 	                scanf ("%f", &Q1);
 	                printf ("El modulo del campo electrico es:\n");
 	                campo1(q1,p,Q1);
-	                //Campo eléctrico producido por la carga 2:
+	                //Campo elÃ©ctrico producido por la carga 2:
 	                printf ("\n\nCAMPO ELECTRICO QUE PRODUCE LA SEGUNDA CARGA\n");
 	                dist2 = distancia2(q2,p);
 	                printf ("Las componentes i y j del vector son, respectivamente: \n");
 	                vectorunitario1(q2,p);
 	                printf ("Dichas componentes deben dividirse por su modulo %.2f para que el vector sea unitario\n", dist2);
-	                printf ("Introduce el valor de la primera carga:\n");
+	                printf ("Introduce el valor de la segunda carga:\n");
 	                scanf ("%f", &Q2);
 	                printf ("El modulo del campo electrico es:\n");
 	                campo2(q2,p,Q2);
@@ -281,7 +281,7 @@ do{
 	                printf ("Introduzca donde esta situado el punto:\n");
 	                scanf ("%f %f", &p.x, &p.y);
 	                distancia(p,q,n); 
-	                //Energía que poduce cada carga en el punto y energía total
+	                //EnergÃ­a que poduce cada carga en el punto y energÃ­a total
 	                for (i=0; i<n; i++)
 	                {
 		                printf ("Introduzca el valor de la carga q%i\n", i+1);
