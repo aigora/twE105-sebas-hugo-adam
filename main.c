@@ -15,7 +15,7 @@ int main ()
 do{
 	system ("cls");
 	
-	f = fopen("datostrabajo.txt", "w");
+	f = fopen("datostrabajo.txt", "a");
 	if (f==NULL){
 	printf ("No ha podido abrirse el fichero.\n");
 	return -1;
@@ -76,7 +76,6 @@ do{
 	                FUER(q1,q2,p,Q1,Q2,Q3);
 	                fprintf(f,"\nDistancia 1: %.2f\n",dist1);
 	                fprintf(f,"Distancia 2: %.2f\n",dist2);
-	                fclose(f);
 				break;
 				    
 				case 2:
@@ -88,8 +87,7 @@ do{
                   		printf ("Debes introducir 'C', 'Q' o 'F':\n");
                   		scanf (" %c", &h);
 					  }
-                    fprintf(f,"Ha elegido: %c\n",h);
-                    fclose(f);
+                    fprintf(f,"\nHa elegido: %c\n",h);
                     switch (h)
                     {
                     case 'f':
@@ -118,11 +116,11 @@ do{
 					
 				case 3:
 						system ("cls");
-					//CAMPO ELÃ‰CTRICO PRODUCIDO POR DOS CARGAS EN UN PUNTO
+					//CAMPO ELÉCTRICO PRODUCIDO POR DOS CARGAS EN UN PUNTO
 					printf ("CAMPO ELECTRICO PRODUCIDO POR DOS CARGAS EN UN PUNTO\n");
 	                printf ("Esribe donde estan situadas las cargas q1 y q2, y el punto donde actua el campo, respectivamente:\n");
 	                scanf ("%f %f %f %f %f %f", &q1.x, &q1.y, &q2.x, &q2.y, &p.x, &p.y);
-	                //Campo elÃ©ctrico producido por la carga 1:
+	                //Campo eléctrico producido por la carga 1:
 	                printf ("\nCAMPO ELECTRICO QUE PRODUCE LA PRIMERA CARGA\n");
 	                dist1 = distancia1(q1,p);
 	                printf ("Las componentes i y j del vector son, respectivamente: \n");
@@ -132,13 +130,13 @@ do{
 	                scanf ("%f", &Q1);
 	                printf ("El modulo del campo electrico es:\n");
 	                campo1(q1,p,Q1);
-	                //Campo elÃ©ctrico producido por la carga 2:
+	                //Campo eléctrico producido por la carga 2:
 	                printf ("\n\nCAMPO ELECTRICO QUE PRODUCE LA SEGUNDA CARGA\n");
 	                dist2 = distancia2(q2,p);
 	                printf ("Las componentes i y j del vector son, respectivamente: \n");
 	                vectorunitario1(q2,p);
 	                printf ("Dichas componentes deben dividirse por su modulo %.2f para que el vector sea unitario\n", dist2);
-	                printf ("Introduce el valor de la segunda carga:\n");
+	                printf ("Introduce el valor de la primera carga:\n");
 	                scanf ("%f", &Q2);
 	                printf ("El modulo del campo electrico es:\n");
 	                campo2(q2,p,Q2);
@@ -146,7 +144,6 @@ do{
 	                printf ("\n\nCAMPO ELECTRICO PRODUCIDO POR AMBAS CARGAS\n");
 	                CAMPO(q1,q2,p,Q1,Q2);
 	                fprintf(f,"\nDistancia 1 y 2, respectivamente: %.2f, %.2f\n",dist1,dist2);
-	                fclose(f);
 					break;
 					
 				case 4:
@@ -159,6 +156,9 @@ do{
 			                    \n3) Plano infinito.\
 			                    \n4) Volver a 'Distribuciones discretas y continuas de carga'.\n");
 	                            scanf ("%i", &g);
+	                            
+	                    fprintf(f,"\nForma que crea el campo: %i\n",g);
+	                    fclose(f);
 	
 	                    switch (g)
 	                    {
@@ -260,6 +260,7 @@ do{
 	                //Diferencia de potencial
 	                printf("\nLa diferencia de potencia es de:\n");
 	                POTENDIF(q1,q2,p,Q1,Q2);
+	                fprintf(f,"Distancia de las cargas 1 y 2, respectivamente: %.2f, %.2f", dist1,dist2);
 				break;
 			
 				case 2:
@@ -269,7 +270,7 @@ do{
 	                punto q[30];
 	                punto p;
 	                float Q[30], U[30];
-	                printf ("Introduzca el numero de cargas:\n");
+	                printf ("Inroduzca el numero de cargas:\n");
 	                scanf ("%i", &n);
 	                //Distancia entre el punto y las cargas
 	                i=0;
@@ -281,7 +282,7 @@ do{
 	                printf ("Introduzca donde esta situado el punto:\n");
 	                scanf ("%f %f", &p.x, &p.y);
 	                distancia(p,q,n); 
-	                //EnergÃ­a que poduce cada carga en el punto y energÃ­a total
+	                //Energía que poduce cada carga en el punto y energía total
 	                for (i=0; i<n; i++)
 	                {
 		                printf ("Introduzca el valor de la carga q%i\n", i+1);
@@ -318,6 +319,7 @@ do{
 					\n2) Almacenamiento de la energia electrica.\
 					\n3) Volver a menu principal.\n");
 			scanf ("%i", &d);
+			fprintf(f,"Ejericio elegido (Capacidad): %i\n",d);
 			switch (d)
 			{
 				case 1:
@@ -329,7 +331,6 @@ do{
   		            printf ("Debes introducir C, Q o V\n");
   		            scanf (" %c", &l);}
   		            fprintf(f,"Ha elegido: %c",l);
-  		            fclose(f);
                     switch (l)
                     {
                     case 'v':
@@ -383,6 +384,11 @@ do{
 		            printf ("Introduzca el valor de la carga q%i\n", i+1);
 		            scanf ("%f", &Q[i]);
 	                }
+	                for (i=0; i<n; i++)
+	                {
+	                	fprintf(f,"Valor de la carga q%i: %f C\n",i+1, Q[i]);
+					}
+					fclose(f);
 	                energias(p,q,n,C,Q);
 				break;
 				
@@ -410,6 +416,7 @@ do{
 					\n3) Circuitos RC.\
 					\n4) Volver a menu principal.\n");
 			scanf ("%i", &e);
+			fprintf(f,"Ejericio elegido (Corriente electrica y circuitos): %i",e);
 			switch (e)
 			{	
 				case 1:
@@ -420,6 +427,7 @@ do{
   	                while (m!='v' && m!='V' && m!='r' && m!='R' && m!='i' && m!='I'){
   		            printf ("Debes introducir R, I o V.\n");
   		            scanf (" %c", &m);
+  		            fprintf(f,"\nElegido: %c\n",m);
 	                }
                     switch (m)
                     {
@@ -454,6 +462,7 @@ do{
 		            printf("Debes introducir D, C o F.\n");
 		            scanf(" %c", &z);
 	                }
+	                fprintf(f,"\nPotencia disipada en: %c\n",z);
                     switch (z)
                     {
                     case 'f':
@@ -490,6 +499,9 @@ do{
 			                \n3) Dos mallas (resistencias condensador e interruptor).\
 			                \n4) Volver a 'Corriente electrica y circuitos'.\n");
 	                scanf ("%i", &k);
+	                
+	                fprintf(f,"Tipo de circuito elegido: %i",k);
+	                fclose(f);
 	
 	                switch (k)
 	                {
