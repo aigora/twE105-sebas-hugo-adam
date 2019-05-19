@@ -319,7 +319,7 @@ do{
 					\n2) Almacenamiento de la energia electrica.\
 					\n3) Volver a menu principal.\n");
 			scanf ("%i", &d);
-			fprintf(f,"Ejericio elegido (Capacidad): %i\n",d);
+			fprintf(f,"\nEjericio elegido (Capacidad): %i\n",d);
 			switch (d)
 			{
 				case 1:
@@ -330,7 +330,7 @@ do{
   	                while (l!='v' && l!='V' && l!='c' && l!='C' && l!='q' && l!='Q'){
   		            printf ("Debes introducir C, Q o V\n");
   		            scanf (" %c", &l);}
-  		            fprintf(f,"Ha elegido: %c",l);
+  		            fprintf(f,"Ha elegido: %c\n",l);
                     switch (l)
                     {
                     case 'v':
@@ -416,7 +416,7 @@ do{
 					\n3) Circuitos RC.\
 					\n4) Volver a menu principal.\n");
 			scanf ("%i", &e);
-			fprintf(f,"Ejericio elegido (Corriente electrica y circuitos): %i",e);
+			fprintf(f,"Ejericio elegido (Corriente electrica y circuitos): %i\n",e);
 			switch (e)
 			{	
 				case 1:
